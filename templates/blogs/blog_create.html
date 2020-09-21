@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="form">
+    <form method="post">
+        <div class="form-group">
+            <label for="blogname">Title</label>
+            <input type="name" class="form-control" id="blogname" name="blogname" placeholder="blogname" >
+
+
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <input type="text" class="form-control" id="description" name="description" placeholder="description" aria-describedby="descriptionHelpBlock">
+            <span id="descriptionHelpBlock" class="help-block">
+                Type description of your blog.
+            </span>
+        </div>
+
+        <button type="submit" class="btn btn-success">Create Blog</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<header>
+    <h1>Post</h1>
+</header>
+<section>
+    <div class="list-group">
+        {% for post in posts %}
+        <div class="list-group-item">
+          <div class="media">
+             <img src="{{url_for('static', filename=post.image_name )}}" width="100" height="100" class="mr-3">
+             <div class="media-body">
+             <h5 class="mt-0">{{ post.title}}</h5>
+                 {{ post.content}}
+                 <br>
+                 <a href="{{url_for('post.like_count', blog_id=blog_id, post_id=post._id)}}" class="btn btn-outline-primary">{{post.like}}Like</a>
+                 <a href="{{url_for('post.dislike_count', blog_id=blog_id, post_id=post._id)}}" class="btn btn-outline-danger">{{post.dislike}}Dislike</a>
+
+             </div>
+          </div>
+        </div>
+        {% endfor %}
+
+
+    </div>
+
+
+
+</section>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<header>
+    <h1>Post</h1>
+</header>
+<section>
+    <div class="list-group">
+        {% for post in posts %}
+        <div class="list-group-item">
+          <div class="media">
+             <img src="{{url_for('static', filename=post.image_name )}}" width="64" height="64" class="mr-3">
+             <div class="media-body">
+                 <h5 class="mt-0"><b>{{ post.title}}</b></h5><small>{{post.date}}</small>
+                 <p>{{ post.content}}</p>
+                 
+             </div>
+          </div>
+            <a class="btn btn-success mt-3"  href="{{url_for('post.edit_post', blog_id=blog_id, post_id=post._id)}}">Edit Post</a>
+            <a class="btn btn-danger mt-3"  href="{{url_for('post.delete_post', blog_id=blog_id, post_id=post._id)}}">Delete Post</a>
+        </div>
+            {% endfor %}
+
+    </div>
+    <a class="btn btn-primary mt-3" href="{{url_for('post.create_post', blog_id=blog_id)}}">Create Post</a>
+
+
+</section>
+{% endblock %}

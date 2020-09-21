@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="form">
+    <form method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="blogname">Title</label>
+            <input type="name" class="form-control" id="blogname" name="title" placeholder="Title" >
+
+
+        </div>
+        <div class="form-group">
+            <label for="description">content</label>
+            <textarea class="form-control" id="description" name="content" placeholder="content" aria-describedby="descriptionHelpBlock" rows="10" cols="5"></textarea>
+            <span id="descriptionHelpBlock" class="help-block">
+                Type content of your post.
+            </span>
+        </div>
+
+         <div class="form-group">
+             <label for="exampleFormControlFile1">Image of your Post</label>
+             <input type="file" class="form-control-file" id="exampleFormControlFile1" name="file1">
+         </div>
+
+        <button type="submit" class="btn btn-success">Create Post</button>
+    </form>
+</div>
+{% endblock %}
